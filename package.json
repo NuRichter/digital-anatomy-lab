@@ -1,0 +1,31 @@
+{
+  "name": "digital-anatomy-lab",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Laboratorium Anatomi Digital: penjelajah anatomi manusia 3D seluruh tubuh berbasis BodyParts3D",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173",
+    "assets": "node scripts/process-assets.mjs",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@fontsource-variable/ibm-plex-sans": "5.3.0",
+    "@fontsource-variable/source-serif-4": "5.3.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "4.5.1",
+    "@playwright/test": "1.64.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.186.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "6.0.3",
+    "vite": "8.3.4"
+  }
+}

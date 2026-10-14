@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.vercel/
+test-results/
+playwright-report/
+*.log
+.env*
+*.docx
+*.pptx
+*.pdf
+raw/
