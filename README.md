@@ -17,6 +17,10 @@ menyembunyikan, dan mencari 2.216 struktur bernama dari model BodyParts3D, lapis
 - Panel informasi: nama FMA, FMA ID, sistem, wilayah, berkas sumber, dan relasi *part-of*.
 - Isolasi, sembunyikan, x-ray, fokus, atur ulang; pintasan papan ketik (I, H, X, R, /, Esc).
 - Mode proyektor (tema gelap), tata letak seluler dengan *bottom sheet*, dukungan *reduced motion*.
+- **Organ detail** (`#organ`): 10 model organ beresolusi tinggi dari Human Reference Atlas v2.5 (jantung dengan katup dan otot papilaris,
+  ginjal, paru dan bronkus, organ reproduksi wanita, mata, lutut, laring, otak, hati, limpa); pilih bagian, x-ray, tampak baku.
+- **Demo 3D Slicer** (`#demo-slicer`): enam langkah demo kuliah Bagian 5 dengan tangkapan layar asli Slicer 5.12.4, MPR interaktif
+  (crosshair, preset W/L, Data Probe HU), threshold langsung, model tulang hasil Slicer yang dapat diputar, dan Segment Statistics.
 - Fallback bila WebGL tidak tersedia (gambar statis + katalog yang dapat dicari) dan pesan galat + "Coba lagi" bila model gagal dimuat.
 
 ## Menjalankan

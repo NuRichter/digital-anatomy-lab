@@ -4,6 +4,7 @@ import '@fontsource-variable/source-serif-4/opsz.css'
 import '@fontsource-variable/source-serif-4/opsz-italic.css'
 import '@fontsource-variable/ibm-plex-sans/index.css'
 import './styles.css'
+import './demo/demo.css'
 import App from './App'
 
 createRoot(document.getElementById('root')!).render(

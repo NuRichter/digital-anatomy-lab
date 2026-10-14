@@ -1,0 +1,854 @@
+{
+ "attribution": "3D Reference Organs from the Human Reference Atlas (HRA) v2.5, HuBMAP; models by Kristen Browne and Heidi Schlehlein, licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), https://humanatlas.io/3d-reference-library. Created from Visible Human Project data provided by the U.S. National Library of Medicine; brain model based on the Allen human brain reference atlas (Ding et al. 2016). Modified: compressed (meshopt), female organs merged into one file.",
+ "citation": "Börner K, Blood PD, Silverstein JC, et al. Human BioMolecular Atlas Program (HuBMAP): 3D Human Reference Atlas construction and usage. Nature Methods 22(4):845–860 (2025). https://doi.org/10.1038/s41592-024-02563-5",
+ "citation_library": "Browne K, Schlehlein H, Herr BW II, Quardokus E, Bueckle A, Börner K. 2024. \"HuBMAP CCF 3D Reference Object Library.\" https://humanatlas.io/3d-reference-library",
+ "retrieved": "2026-10-14",
+ "catalog": "https://apps.humanatlas.io/api/v1/reference-organs",
+ "collection": "https://cdn.humanatlas.io/digital-objects/collection/hra/v2.5/",
+ "organs": [
+  {
+   "slug": "heart-male",
+   "label_id": "Jantung",
+   "label_latin_or_en": "Heart (cor)",
+   "sex": "male",
+   "hra_version": "HRA v2.5 (heart-male/v1.3)",
+   "source_data": "Visible Human Male (NLM)",
+   "creators": [
+    "Kristen Browne"
+   ],
+   "license": "CC BY 4.0",
+   "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/heart-male/v1.3/",
+   "file": "/hra/heart-male.glb",
+   "bytes": 792640,
+   "tris": 164119,
+   "bbox_mm": {
+    "min": [
+     -43.0,
+     423.0,
+     -15.0
+    ],
+    "max": [
+     81.0,
+     529.0,
+     90.0
+    ]
+   },
+   "bbox_note": "GLB vertex units are metres (glTF); bbox_mm = original HRA/VH coordinates x1000, +X = patient left, +Y = superior, +Z = anterior. Not recentred.",
+   "parts_total": 14,
+   "parts": [
+    "VH_M_mitral_valve",
+    "VH_M_tricuspid_valve",
+    "VH_M_aortic_valve",
+    "VH_M_pulmonary_valve",
+    "VH_M_papillary_muscle_of_heart_anterior",
+    "VH_M_papillary_muscle_of_heart_anterolateral",
+    "VH_M_papillary_muscle_of_heart_medial",
+    "VH_M_papillary_muscle_of_heart_posterior",
+    "VH_M_papillary_muscle_of_heart_posteromedial",
+    "VH_M_left_cardiac_atrium",
+    "VH_M_right_cardiac_atrium",
+    "VH_M_heart_right_ventricle",
+    "VH_M_interventricular_septum",
+    "VH_M_heart_left_ventricle"
+   ],
+   "components": [
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/heart-male/v1.3",
+     "title": "3D Reference Organ for Heart, Male",
+     "version": "v1.3",
+     "doi": "https://doi.org/10.48539/HBM564.WKNG.249",
+     "creators": [
+      "Kristen Browne"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/heart-male/v1.3/assets/3d-vh-m-heart.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/heart-male/v1.3/",
+     "source_bytes": 4071772,
+     "catalog_creation_date": "2024-06-15"
+    }
+   ],
+   "web_processing": "gltf-transform 4.5.1: meshopt --level medium --quantize-position 14 --quantize-normal 8 (requires EXT_meshopt_compression decoder)"
+  },
+  {
+   "slug": "kidney-male-left",
+   "label_id": "Ginjal kiri",
+   "label_latin_or_en": "Left kidney (ren sinister)",
+   "sex": "male",
+   "hra_version": "HRA v2.5 (kidney-male-left/v1.3)",
+   "source_data": "Visible Human Male (NLM)",
+   "creators": [
+    "Heidi Schlehlein",
+    "Kristen Browne"
+   ],
+   "license": "CC BY 4.0",
+   "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/kidney-male-left/v1.3/",
+   "file": "/hra/kidney-male-left.glb",
+   "bytes": 451936,
+   "tris": 83692,
+   "bbox_mm": {
+    "min": [
+     34.0,
+     250.0,
+     -69.0
+    ],
+    "max": [
+     109.0,
+     356.0,
+     14.0
+    ]
+   },
+   "bbox_note": "GLB vertex units are metres (glTF); bbox_mm = original HRA/VH coordinates x1000, +X = patient left, +Y = superior, +Z = anterior. Not recentred.",
+   "parts_total": 22,
+   "parts": [
+    "VH_M_kidney_capsule_L",
+    "VH_M_hilum_of_kidney_L",
+    "VH_M_renal_column_L",
+    "VH_M_outer_cortex_of_kidney_L",
+    "VH_M_renal_papilla_L_a",
+    "VH_M_renal_papilla_L_b",
+    "VH_M_renal_papilla_L_c",
+    "VH_M_renal_papilla_L_d",
+    "VH_M_renal_papilla_L_e",
+    "VH_M_renal_papilla_L_f",
+    "VH_M_renal_papilla_L_g",
+    "VH_M_renal_papilla_L_h",
+    "VH_M_renal_papilla_L_i",
+    "VH_M_renal_pyramid_L_a",
+    "VH_M_renal_pyramid_L_b",
+    "VH_M_renal_pyramid_L_c",
+    "VH_M_renal_pyramid_L_d",
+    "VH_M_renal_pyramid_L_e",
+    "VH_M_renal_pyramid_L_f",
+    "VH_M_renal_pyramid_L_g",
+    "VH_M_renal_pyramid_L_h",
+    "VH_M_renal_pyramid_L_i"
+   ],
+   "components": [
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/kidney-male-left/v1.3",
+     "title": "3D Reference Organ for Kidney, Male, Left",
+     "version": "v1.3",
+     "doi": "https://doi.org/10.48539/HBM759.JKKF.434",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/kidney-male-left/v1.3/assets/3d-vh-m-kidney-l.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/kidney-male-left/v1.3/",
+     "source_bytes": 1536980,
+     "catalog_creation_date": "2024-06-15"
+    }
+   ],
+   "web_processing": "gltf-transform 4.5.1: meshopt --level medium --quantize-position 14 --quantize-normal 8 (requires EXT_meshopt_compression decoder)"
+  },
+  {
+   "slug": "lung-male",
+   "label_id": "Paru-paru dan percabangan bronkus",
+   "label_latin_or_en": "Lungs with bronchial tree (pulmones)",
+   "sex": "male",
+   "hra_version": "HRA v2.5 (lung-male/v1.4)",
+   "source_data": "Visible Human Male (NLM)",
+   "creators": [
+    "Heidi Schlehlein",
+    "Kristen Browne"
+   ],
+   "license": "CC BY 4.0",
+   "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/lung-male/v1.4/",
+   "file": "/hra/lung-male.glb",
+   "bytes": 2183456,
+   "tris": 224765,
+   "bbox_mm": {
+    "min": [
+     -125.0,
+     386.0,
+     -92.0
+    ],
+    "max": [
+     134.0,
+     615.0,
+     97.0
+    ]
+   },
+   "bbox_note": "GLB vertex units are metres (glTF); bbox_mm = original HRA/VH coordinates x1000, +X = patient left, +Y = superior, +Z = anterior. Not recentred.",
+   "parts_total": 58,
+   "parts": [
+    "VH_M_hilum_L",
+    "VH_M_hilum_upper_L",
+    "VH_M_left_lingula_superior_bronchopulmonary_segment",
+    "VH_M_left_posterior_bronchopulmonary_segment",
+    "VH_M_left_anterior_bronchopulmonary_segment",
+    "VH_M_left_apical_bronchopulmonary_segment",
+    "VH_M_left_lingula_inferior_bronchopulmonary_segment",
+    "VH_M_hilum_lower_L",
+    "VH_M_left_anterior_basal_bronchopulmonary_segment",
+    "VH_M_left_lateral_basal_bronchopulmonary_segment",
+    "VH_M_left_medial_basal_bronchopulmonary_segment",
+    "VH_M_left_posetrior_basal_bronchopulmonary_segment",
+    "VH_M_left_superior_bronchopulmonary_segment",
+    "VH_M_hilum_R",
+    "VH_M_right_lateral_bronchopulmonary_segment",
+    "VH_M_right_medial_bronchopulmonary_segment",
+    "VH_M_hilum_middle_R",
+    "VH_M_hilum_lower_R",
+    "VH_M_right_anterior_basal_bronchopulmonary_segment",
+    "VH_M_right_lateral_basal_bronchopulmonary_segment",
+    "VH_M_right_medial_basal_bronchopulmonary_segment",
+    "VH_M_right_posterior_basal_bronchopulmonary_segment",
+    "VH_M_right_superior_bronchopulmonary_segment",
+    "VH_M_right_apical_bronchopulmonary_segment",
+    "VH_M_right_posterior_bronchopulmonary_segment",
+    "VH_M_right_anterior_bronchopulmonary_segment",
+    "VH_M_hilum_upper_R",
+    "VH_M_cartilage_of_the_lobar_bronchus_L",
+    "VH_M_cartilage_of_the_tertiary_bronchus_L",
+    "VH_M_left_superior_lobar_bronchus",
+    "VH_M_left_inferior_lobar_bronchus",
+    "VH_M_left_superior_bronchus",
+    "VH_M_left_posterior_basal_bronchus",
+    "VH_M_left_medial_basal_bronchus",
+    "VH_M_left_apical_bronchus",
+    "VH_M_left_anterior_bronchus",
+    "VH_M_left_lingular_bronchus",
+    "VH_M_left_lingula_superior_bronchus",
+    "VH_M_left_lingula_inferior_bronchus",
+    "VH_M_left_lateral_basal_bronchus",
+    "VH_M_left_anterior_basal_bronchus",
+    "VH_M_cartilage_of_the_lobar_bronchus_R",
+    "VH_M_cartilage_of_the_tertiary_bronchus_R",
+    "VH_M_right_intermediate_bronchus",
+    "VH_M_right_middle_lobar_bronchus",
+    "VH_M_right_superior_lobar_bronchus",
+    "VH_M_right_anterior_bronchus",
+    "VH_M_right_lateral_basal_bronchus",
+    "VH_M_right_lateral_bronchus",
+    "VH_M_right_lower_lobar_bronchus",
+    "VH_M_right_medial_basal_bronchus",
+    "VH_M_right_medial_bronchus",
+    "VH_M_right_posterior_basal",
+    "VH_M_right_posterior_bronchus",
+    "VH_M_right_superior_bronchus",
+    "VH_M_right_apical_bronchus",
+    "VH_M_right_anterior_basal_bronchus",
+    "VH_M_bronchus"
+   ],
+   "components": [
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/lung-male/v1.4",
+     "title": "3D Reference Organ for Lung, Male",
+     "version": "v1.4",
+     "doi": "https://doi.org/10.48539/HBM532.KLZD.394",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/lung-male/v1.4/assets/3d-vh-m-lung.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/lung-male/v1.4/",
+     "source_bytes": 10942332,
+     "catalog_creation_date": "2024-06-15"
+    }
+   ],
+   "web_processing": "gltf-transform 4.5.1: meshopt --level medium --quantize-position 14 --quantize-normal 8 (requires EXT_meshopt_compression decoder)"
+  },
+  {
+   "slug": "female-reproductive",
+   "label_id": "Organ reproduksi wanita (rahim, ovarium, tuba falopi)",
+   "label_latin_or_en": "Female internal genitalia: uterus, ovaries, uterine (fallopian) tubes",
+   "sex": "female",
+   "hra_version": "HRA v2.5 (uterus-female/v1.2, ovary-female-left/v1.3, ovary-female-right/v1.3, fallopian-tube-female-left/v1.2, fallopian-tube-female-right/v1.2)",
+   "source_data": "Visible Human Female (NLM) [metadata says \"Visible Human Dataset\"; sex Female, 3d-vh-f file, placed on hra-ccf-body#VHFemale]",
+   "creators": [
+    "Heidi Schlehlein",
+    "Kristen Browne"
+   ],
+   "license": "CC BY 4.0",
+   "source_url": "https://apps.humanatlas.io/api/v1/reference-organs",
+   "file": "/hra/female-reproductive.glb",
+   "bytes": 414888,
+   "tris": 77835,
+   "bbox_mm": {
+    "min": [
+     -77.0,
+     2.0,
+     -90.0
+    ],
+    "max": [
+     51.0,
+     85.0,
+     -27.0
+    ]
+   },
+   "bbox_note": "GLB vertex units are metres (glTF); bbox_mm = original HRA/VH coordinates x1000, +X = patient left, +Y = superior, +Z = anterior. Not recentred.",
+   "parts_total": 21,
+   "parts": [
+    "VH_F_cervicovaginal_junction",
+    "VH_F_abdominal_ostium_of_uterine_tube",
+    "VH_F_body_of_uterus",
+    "VH_F_fundus_of_uterus",
+    "VH_F_cornua",
+    "VH_F_lower_uterine_segment",
+    "VH_F_posterior_wall_of_uterus",
+    "VH_F_anterior_wall_of_uterus",
+    "VH_F_cervix",
+    "VH_F_internal_cervical_os",
+    "VH_F_external_cervical_os",
+    "VH_F_left_ovary",
+    "VH_F_right_ovary",
+    "VH_F_uterine_tube_infundibulum_L",
+    "VH_F_fibria_of_uterine_tube_L",
+    "VH_F_isthmus_of_fallopian_tube_L",
+    "VH_F_ampulla_of_uterine_tube_L",
+    "VH_F_ampulla_of_uterine_tube_R",
+    "VH_F_isthmus_of_fallopian_tube_R",
+    "VH_F_fibria_of_uterine_tube_R",
+    "VH_F_uterine_tube_infundibulum_R"
+   ],
+   "components": [
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/uterus-female/v1.2",
+     "title": "3D Reference Organ for Uterus, Female",
+     "version": "v1.2",
+     "doi": "https://doi.org/10.48539/HBM627.VTKD.892",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/uterus-female/v1.2/assets/3d-vh-f-uterus.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/uterus-female/v1.2/",
+     "source_bytes": 980408,
+     "catalog_creation_date": "2024-06-15"
+    },
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/ovary-female-left/v1.3",
+     "title": "3D Reference Organ for Ovary, Female, Left",
+     "version": "v1.3",
+     "doi": "https://doi.org/10.48539/HBM695.KCXS.294",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/ovary-female-left/v1.3/assets/3d-vh-f-ovary-l.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/ovary-female-left/v1.3/",
+     "source_bytes": 9000,
+     "catalog_creation_date": "2024-12-15"
+    },
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/ovary-female-right/v1.3",
+     "title": "3D Reference Organ for Ovary, Female, Right",
+     "version": "v1.3",
+     "doi": "https://doi.org/10.48539/HBM277.TVMB.676",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/ovary-female-right/v1.3/assets/3d-vh-f-ovary-r.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/ovary-female-right/v1.3/",
+     "source_bytes": 8756,
+     "catalog_creation_date": "2024-12-15"
+    },
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/fallopian-tube-female-left/v1.2",
+     "title": "3D Reference Organ for Fallopian Tube, Female, Left",
+     "version": "v1.2",
+     "doi": "https://doi.org/10.48539/HBM529.KBQT.896",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/fallopian-tube-female-left/v1.2/assets/3d-vh-f-fallopian-tube-l.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/fallopian-tube-female-left/v1.2/",
+     "source_bytes": 336732,
+     "catalog_creation_date": "2024-06-15"
+    },
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/fallopian-tube-female-right/v1.2",
+     "title": "3D Reference Organ for Fallopian Tube, Female, Right",
+     "version": "v1.2",
+     "doi": "https://doi.org/10.48539/HBM952.XJJV.857",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/fallopian-tube-female-right/v1.2/assets/3d-vh-f-fallopian-tube-r.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/fallopian-tube-female-right/v1.2/",
+     "source_bytes": 327504,
+     "catalog_creation_date": "2024-06-15"
+    }
+   ],
+   "web_processing": "gltf-transform 4.5.1: merge --merge-scenes, meshopt --level medium --quantize-position 14 --quantize-normal 8 (requires EXT_meshopt_compression decoder)"
+  },
+  {
+   "slug": "eye-male-right",
+   "label_id": "Mata kanan (bola mata)",
+   "label_latin_or_en": "Right eye (bulbus oculi dexter)",
+   "sex": "male",
+   "hra_version": "HRA v2.5 (eye-male-right/v1.3)",
+   "source_data": "Visible Human Male (NLM)",
+   "creators": [
+    "Heidi Schlehlein",
+    "Kristen Browne"
+   ],
+   "license": "CC BY 4.0",
+   "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/eye-male-right/v1.3/",
+   "file": "/hra/eye-male-right.glb",
+   "bytes": 4949164,
+   "tris": 346630,
+   "bbox_mm": {
+    "min": [
+     -47.0,
+     799.0,
+     71.0
+    ],
+    "max": [
+     -22.0,
+     823.0,
+     97.0
+    ]
+   },
+   "bbox_note": "GLB vertex units are metres (glTF); bbox_mm = original HRA/VH coordinates x1000, +X = patient left, +Y = superior, +Z = anterior. Not recentred.",
+   "parts_total": 23,
+   "parts": [
+    "VH_M_retina_R",
+    "VH_M_fovea_R",
+    "VH_M_macula_lutea_R",
+    "VH_M_optic_disc_R",
+    "VH_M_palpebral_conjunctiva_of_upper_eyelid_R",
+    "VH_M_palpebral_conjunctiva_of_lower_eyelid_R",
+    "VH_M_sclera_R",
+    "VH_M_optic_choroid_R",
+    "VH_M_pupil_R",
+    "VH_M_ciliary_processes_R",
+    "VH_M_suspensory_ligament_of_lens_R",
+    "VH_M_ora_serrata_of_retina_R",
+    "VH_M_corneo_scleral_junction_R",
+    "VH_M_lens_R",
+    "VH_M_schlemms_canal_R",
+    "VH_M_aqueous_humor_R",
+    "VH_M_ciliary_body_R",
+    "VH_M_ciliary_muscle_R",
+    "VH_M_trabecular_meshwork_R",
+    "VH_M_iris_R",
+    "VH_M_bulbar_conjunctiva_R",
+    "VH_M_cornea_R",
+    "VH_M_vitreous_humor_R"
+   ],
+   "components": [
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/eye-male-right/v1.3",
+     "title": "3D Reference Organ for Eye, Male, Right",
+     "version": "v1.3",
+     "doi": "https://doi.org/10.48539/HBM272.VPJG.573",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/eye-male-right/v1.3/assets/3d-vh-m-eye-r.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/eye-male-right/v1.3/",
+     "source_bytes": 20697584,
+     "catalog_creation_date": "2024-06-15"
+    }
+   ],
+   "web_processing": "gltf-transform 4.5.1: meshopt --level medium --quantize-position 14 --quantize-normal 8 (requires EXT_meshopt_compression decoder)"
+  },
+  {
+   "slug": "knee-male-left",
+   "label_id": "Lutut kiri",
+   "label_latin_or_en": "Left knee joint (articulatio genus sinistra)",
+   "sex": "male",
+   "hra_version": "HRA v2.5 (knee-male-left/v1.2)",
+   "source_data": "Visible Human Male (NLM)",
+   "creators": [
+    "Heidi Schlehlein",
+    "Kristen Browne"
+   ],
+   "license": "CC BY 4.0",
+   "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/knee-male-left/v1.2/",
+   "file": "/hra/knee-male-left.glb",
+   "bytes": 144712,
+   "tris": 22892,
+   "bbox_mm": {
+    "min": [
+     70.0,
+     -833.0,
+     -114.0
+    ],
+    "max": [
+     243.0,
+     54.0,
+     51.0
+    ]
+   },
+   "bbox_note": "GLB vertex units are metres (glTF); bbox_mm = original HRA/VH coordinates x1000, +X = patient left, +Y = superior, +Z = anterior. Not recentred.",
+   "parts_total": 20,
+   "parts": [
+    "VH_M_meniscus_L",
+    "VH_M_fibula_L",
+    "VH_M_femur_L",
+    "VH_M_articular_cartilage_of_knee_L",
+    "VH_M_intercondylar_fossa_L",
+    "VH_M_anterior_cruciate_enthesis_L",
+    "VH_M_posterior_cruciate_enthesis_L",
+    "VH_M_lateral_condyle_of_femur_frontal_L",
+    "VH_M_lateral_condyle_of_femur_inf_L",
+    "VH_M_lateral_condyle_of_femur_sup_L",
+    "VH_M_lateral_epicondylar_enthesis_L",
+    "VH_M_lateral_perichondular_surface_L",
+    "VH_M_distal_most_point_of_medial_condyle_of_femur_L",
+    "VH_M_medial_condyle_of_left_femur_inf",
+    "VH_M_medial_condyle_of_left_femur_sup",
+    "VH_M_medial_epicondylar_enthesis_L",
+    "VH_M_medial_perichondular_surface_L",
+    "VH_M_patellar_surface_L",
+    "VH_M_tibia_L",
+    "VH_M_patella_L"
+   ],
+   "components": [
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/knee-male-left/v1.2",
+     "title": "3D Reference Organ for Knee, Male, Left",
+     "version": "v1.2",
+     "doi": "https://doi.org/10.48539/HBM839.JJQF.873",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/knee-male-left/v1.2/assets/3d-vh-m-knee-l.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/knee-male-left/v1.2/",
+     "source_bytes": 440020,
+     "catalog_creation_date": "2024-06-15"
+    }
+   ],
+   "web_processing": "gltf-transform 4.5.1: meshopt --level medium --quantize-position 14 --quantize-normal 8 (requires EXT_meshopt_compression decoder)"
+  },
+  {
+   "slug": "larynx-male",
+   "label_id": "Laring (pangkal tenggorok)",
+   "label_latin_or_en": "Larynx (cartilages)",
+   "sex": "male",
+   "hra_version": "HRA v2.5 (larynx-male/v1.1)",
+   "source_data": "Visible Human Male (NLM)",
+   "creators": [
+    "Heidi Schlehlein",
+    "Kristen Browne"
+   ],
+   "license": "CC BY 4.0",
+   "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/larynx-male/v1.1/",
+   "file": "/hra/larynx-male.glb",
+   "bytes": 98816,
+   "tris": 13238,
+   "bbox_mm": {
+    "min": [
+     -28.0,
+     628.0,
+     22.0
+    ],
+    "max": [
+     25.0,
+     700.0,
+     60.0
+    ]
+   },
+   "bbox_note": "GLB vertex units are metres (glTF); bbox_mm = original HRA/VH coordinates x1000, +X = patient left, +Y = superior, +Z = anterior. Not recentred.",
+   "parts_total": 7,
+   "parts": [
+    "VH_M_arytenoid_cartilage_R",
+    "VH_M_arytenoid_cartilage_L",
+    "VH_M_epiglottic_cartilage",
+    "VH_M_cricoid_cartilage",
+    "VH_M_thyroid_cartilage",
+    "VH_M_corniculate_cartilage_L",
+    "VH_M_corniculate_cartilage_R"
+   ],
+   "components": [
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/larynx-male/v1.1",
+     "title": "3D Reference Organ for Larynx, Male",
+     "version": "v1.1",
+     "doi": "https://doi.org/10.48539/HBM362.HNZB.247",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/larynx-male/v1.1/assets/3d-vh-m-larynx.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/larynx-male/v1.1/",
+     "source_bytes": 335576,
+     "catalog_creation_date": "2024-06-15"
+    }
+   ],
+   "web_processing": "gltf-transform 4.5.1: meshopt --level medium --quantize-position 14 --quantize-normal 8 (requires EXT_meshopt_compression decoder)"
+  },
+  {
+   "slug": "brain-male",
+   "label_id": "Otak",
+   "label_latin_or_en": "Brain (encephalon)",
+   "sex": "male",
+   "hra_version": "HRA v2.5 (brain-male/v1.4)",
+   "source_data": "Allen Human Brain Reference Atlas (Ding et al. 2016), resized to fit Visible Human Male/Female (NLM)",
+   "creators": [
+    "Heidi Schlehlein",
+    "Kristen Browne"
+   ],
+   "license": "CC BY 4.0",
+   "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/brain-male/v1.4/",
+   "file": "/hra/brain-male.glb",
+   "bytes": 3824952,
+   "tris": 656268,
+   "bbox_mm": {
+    "min": [
+     -68.0,
+     757.0,
+     -85.0
+    ],
+    "max": [
+     68.0,
+     903.0,
+     82.0
+    ]
+   },
+   "bbox_note": "GLB vertex units are metres (glTF); bbox_mm = original HRA/VH coordinates x1000, +X = patient left, +Y = superior, +Z = anterior. Not recentred.",
+   "parts_total": 283,
+   "parts": [
+    "Allen_olfactory_bulb_L",
+    "Allen_anterior_olfactory_nucleus_L",
+    "Allen_piriform_region_L",
+    "Allen_frontal_agranular_insular_cortex_area_Fl_L",
+    "Allen_temporal_agranular_insular_cortex_area_Tl_L",
+    "Allen_head_of_caudate_L",
+    "Allen_body_of_caudate_L",
+    "Allen_tail_of_caudate_L",
+    "Allen_putamen_L",
+    "Allen_nucleus_accumbens_L",
+    "Allen_external_segment_of_globus_pallidus_L",
+    "Allen_internal_segment_of_globus_pallidus_L",
+    "Allen_claustrum_L",
+    "Allen_basal_forebrain_L",
+    "Allen_septal_nuclei_L",
+    "Allen_amygdaloid_complex_L",
+    "Allen_anterior_amygdaloid_area_L",
+    "Allen_central_nuclear_group_L",
+    "Allen_lateral_nucleus_L",
+    "Allen_basolateral_nucleus_basal_nucleus_L",
+    "Allen_basomedial_nucleus_accessory_basal_nucleus_L",
+    "Allen_anterior_cortical_nucleus_L",
+    "Allen_posterior_cortical_nucleus_L",
+    "Allen_medial_nucleus_L",
+    "Allen_amygdalohippocampal_area_L",
+    "Allen_bed_nucleus_of_stria_terminalis_L",
+    "Allen_thalamus_L",
+    "Allen_anterior_nuclear_complex_of_thalamus_L",
+    "Allen_lateral_dorsal_nucleus_of_thalamus_L",
+    "Allen_mediodorsal_nucleus_of_thalamus_L",
+    "Allen_reuniens_nucleus_medioventral_nucleus_of_thalamus_L",
+    "Allen_lateral_posterior_nucleus_of_thalamus_L",
+    "Allen_pulvinar_of_thalamus_L",
+    "Allen_ventral_anterior_nucleus_of_thalamus_L",
+    "Allen_ventral_lateral_nucleus_of_thalamus_L",
+    "Allen_ventral_posterior_lateral_nucleus_L",
+    "Allen_ventral_posterior_medial_nucleus_L",
+    "Allen_dorsal_lateral_geniculate_nucleus_L",
+    "Allen_medial_geniculate_nuclei_L",
+    "Allen_centromedian_nucleus_of_thalamus_L",
+    "Allen_parafascicular_nucleus_of_thalamus_L",
+    "Allen_habenular_nuclei_L",
+    "Allen_pineal_body_L",
+    "Allen_zona_incerta_L",
+    "Allen_supraoptic_region_of_HTH_L",
+    "Allen_preoptic_region_of_HTH_L",
+    "Allen_tuberal_region_of_HTH_L",
+    "Allen_white_matter_of_forebrain_L",
+    "Allen_anterior_commissure_L",
+    "Allen_corpus_callosum_L",
+    "Allen_fornix_L",
+    "Allen_mammillothalamic_tract_L",
+    "Allen_optic_tract_L",
+    "Allen_anterior_horn_of_lateral_ventricle_L",
+    "Allen_body_of_lateral_ventricle_L",
+    "Allen_posterior_horn_of_lateral_ventricle_L",
+    "Allen_inferior_horn_of_lateral_ventricle_L",
+    "Allen_third_ventricle_L",
+    "Allen_cerebellar_vermis_L",
+    "Allen_cerebellar_deep_nuclei_L",
+    "Allen_white_matter_of_hindbrain_L",
+    "Allen_olfactory_tract_L",
+    "Allen_primary_motor_cortex_L",
+    "Allen_superior_frontal_gyrus_L",
+    "Allen_middle_frontal_gyrus_L",
+    "Allen_inferior_frontal_gyrus_triangular_part_L",
+    "Allen_inferior_frontal_gyrus_opercular_part_L",
+    "Allen_gyrus_rectus_straight_gyrus_L",
+    "Allen_medial_orbital_gyrus_L",
+    "Allen_anterior_intermediate_orbital_gyrus_L",
+    "Allen_posterior_intermediate_orbital_gyrus_L",
+    "Allen_lateral_orbital_gyrus_L",
+    "Allen_paracentral_lobule_rostral_part_L",
+    "Allen_frontal_operculum_L",
+    "Allen_postcentral_gyrus_L",
+    "Allen_supraparietal_lobule_L",
+    "Allen_supramarginal_gyrus_L",
+    "Allen_angular_gyrus_L",
+    "Allen_precuneus_L",
+    "Allen_paracentral_lobule_caudal_part_L"
+   ],
+   "components": [
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/brain-male/v1.4",
+     "title": "3D Reference Organ for Brain, Male",
+     "version": "v1.4",
+     "doi": "https://doi.org/10.48539/HBM538.NKCT.649",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/brain-male/v1.4/assets/3d-allen-m-brain.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/brain-male/v1.4/",
+     "source_bytes": 11982812,
+     "catalog_creation_date": "2024-06-15"
+    }
+   ],
+   "web_processing": "gltf-transform 4.5.1: meshopt --level medium --quantize-position 14 --quantize-normal 8 (requires EXT_meshopt_compression decoder)"
+  },
+  {
+   "slug": "liver-male",
+   "label_id": "Hati",
+   "label_latin_or_en": "Liver (hepar)",
+   "sex": "male",
+   "hra_version": "HRA v2.5 (liver-male/v1.2)",
+   "source_data": "Visible Human Male (NLM)",
+   "creators": [
+    "Heidi Schlehlein",
+    "Kristen Browne"
+   ],
+   "license": "CC BY 4.0",
+   "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/liver-male/v1.2/",
+   "file": "/hra/liver-male.glb",
+   "bytes": 331224,
+   "tris": 60369,
+   "bbox_mm": {
+    "min": [
+     -133.0,
+     280.0,
+     -90.0
+    ],
+    "max": [
+     58.0,
+     455.0,
+     112.0
+    ]
+   },
+   "bbox_note": "GLB vertex units are metres (glTF); bbox_mm = original HRA/VH coordinates x1000, +X = patient left, +Y = superior, +Z = anterior. Not recentred.",
+   "parts_total": 26,
+   "parts": [
+    "VH_M_bare_area_of_liver",
+    "VH_M_liver_capsule",
+    "VH_M_diaphragmatic_surface",
+    "VH_M_suprarenal_impression_of_liver",
+    "VH_M_renal_impression_of_liver",
+    "VH_M_gastric_impression_of_liver",
+    "VH_M_colic_impression_of_liver",
+    "VH_M_esophageal_impression_of_liver",
+    "VH_M_duodenal_impression_of_liver",
+    "VH_M_porta_hepatis",
+    "VH_M_caudate_lobe_of_liver",
+    "VH_M_right_posteroinferior_segment",
+    "VH_M_right_posterosuperior_segment",
+    "VH_M_right_anterosuperior_segment",
+    "VH_M_right_anteroinferior_segment",
+    "VH_M_left_anterolateral_segment",
+    "VH_M_left_posterolateral_segment",
+    "VH_M_left_superiomedial_segment",
+    "VH_M_left_inferomedial_segment",
+    "VH_M_quadrate_lobe_of_liver",
+    "VH_M_hepataduodenal_ligament",
+    "VH_M_ligamentum_venosum",
+    "VH_M_round_ligament_of_liver",
+    "VH_M_triangular_ligament_of_liver",
+    "VH_M_falciform_ligament",
+    "VH_M_coronary_ligament_of_liver"
+   ],
+   "components": [
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/liver-male/v1.2",
+     "title": "3D Reference Organ for Liver, Male",
+     "version": "v1.2",
+     "doi": "https://doi.org/10.48539/HBM896.WMSL.867",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/liver-male/v1.2/assets/3d-vh-m-liver.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/liver-male/v1.2/",
+     "source_bytes": 1136412,
+     "catalog_creation_date": "2024-06-15"
+    }
+   ],
+   "web_processing": "gltf-transform 4.5.1: meshopt --level medium --quantize-position 14 --quantize-normal 8 (requires EXT_meshopt_compression decoder)"
+  },
+  {
+   "slug": "spleen-male",
+   "label_id": "Limpa",
+   "label_latin_or_en": "Spleen (lien)",
+   "sex": "male",
+   "hra_version": "HRA v2.5 (spleen-male/v1.3)",
+   "source_data": "Visible Human Male (NLM)",
+   "creators": [
+    "Heidi Schlehlein",
+    "Kristen Browne"
+   ],
+   "license": "CC BY 4.0",
+   "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/spleen-male/v1.3/",
+   "file": "/hra/spleen-male.glb",
+   "bytes": 140180,
+   "tris": 16872,
+   "bbox_mm": {
+    "min": [
+     26.0,
+     311.0,
+     -81.0
+    ],
+    "max": [
+     136.0,
+     429.0,
+     8.0
+    ]
+   },
+   "bbox_note": "GLB vertex units are metres (glTF); bbox_mm = original HRA/VH coordinates x1000, +X = patient left, +Y = superior, +Z = anterior. Not recentred.",
+   "parts_total": 5,
+   "parts": [
+    "VH_M_colic_surface_of_spleen",
+    "VH_M_diaphragmatic_surface_of_spleen",
+    "VH_M_gastric_surface_of_spleen",
+    "VH_M_hilum_of_spleen",
+    "VH_M_renal_surface_of_spleen"
+   ],
+   "components": [
+    {
+     "hra_id": "https://purl.humanatlas.io/ref-organ/spleen-male/v1.3",
+     "title": "3D Reference Organ for Spleen, Male",
+     "version": "v1.3",
+     "doi": "https://doi.org/10.48539/HBM437.LMTZ.752",
+     "creators": [
+      "Kristen Browne",
+      "Heidi Schlehlein"
+     ],
+     "license": "https://creativecommons.org/licenses/by/4.0/",
+     "source_file_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/spleen-male/v1.3/assets/3d-vh-m-spleen.glb",
+     "source_url": "https://cdn.humanatlas.io/digital-objects/ref-organ/spleen-male/v1.3/",
+     "source_bytes": 540348,
+     "catalog_creation_date": "2024-06-15"
+    }
+   ],
+   "web_processing": "gltf-transform 4.5.1: meshopt --level medium --quantize-position 14 --quantize-normal 8 (requires EXT_meshopt_compression decoder)"
+  }
+ ]
+}

@@ -1,9 +1,20 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ATTRIBUTION, GROUPS, LAYERS, REGIONS, SYNONYMS, SYSTEM_COLOR, SYSTEM_LABEL } from './config'
 import type { Concept, Item, Manifest, Selection } from './types'
 import { Viewer, webglAvailable, type ViewName } from './viewer/Viewer'
 
 type ChunkState = 'idle' | 'loading' | 'ready' | 'error'
+type Mode = 'atlas' | 'organ' | 'slicer'
+
+const SlicerDemo = lazy(() => import('./demo/SlicerDemo'))
+const OrganLab = lazy(() => import('./demo/OrganLab'))
+
+const modeFromHash = (): Mode => (location.hash.startsWith('#demo-slicer') ? 'slicer' : location.hash.startsWith('#organ') ? 'organ' : 'atlas')
+const MODES: { key: Mode; label: string; short: string; hash: string }[] = [
+  { key: 'atlas', label: 'Atlas tubuh', short: 'Atlas', hash: '' },
+  { key: 'organ', label: 'Organ detail', short: 'Organ', hash: '#organ' },
+  { key: 'slicer', label: 'Demo 3D Slicer', short: 'Slicer', hash: '#demo-slicer' },
+]
 type Tab = 'jelajah' | 'info'
 
 const REGION_LABEL = Object.fromEntries(REGIONS.map((r) => [r.key, r.label]))
@@ -38,6 +49,20 @@ export default function App() {
   const [dark, setDark] = useState(() => localStorage.getItem('dal-theme') === 'dark')
   const [about, setAbout] = useState(false)
   const gl = useMemo(webglAvailable, [])
+  const [mode, setMode] = useState<Mode>(modeFromHash)
+
+  useEffect(() => {
+    const f = () => setMode(modeFromHash())
+    window.addEventListener('hashchange', f)
+    window.addEventListener('popstate', f)
+    return () => { window.removeEventListener('hashchange', f); window.removeEventListener('popstate', f) }
+  }, [])
+  const go = (md: Mode) => {
+    const h = MODES.find((x) => x.key === md)!.hash
+    if (md === mode) return
+    history.pushState(null, '', h || location.pathname)
+    setMode(md)
+  }
 
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? 'dark' : 'light'
@@ -54,6 +79,13 @@ export default function App() {
             <p className="brand-sub">Atlas 3D seluruh tubuh · BodyParts3D</p>
           </div>
         </div>
+        <nav className="modes" aria-label="Mode">
+          {MODES.map((x) => (
+            <button key={x.key} className={mode === x.key ? 'on' : ''} aria-current={mode === x.key ? 'page' : undefined} onClick={() => go(x.key)} data-testid={`mode-${x.key}`}>
+              <span className="long">{x.label}</span><span className="short">{x.short}</span>
+            </button>
+          ))}
+        </nav>
         <div className="top-actions">
           <button className="btn-secondary" onClick={() => setDark((d) => !d)} aria-pressed={dark} data-testid="theme-toggle">
             {dark ? <>Tema <span className="long">atlas</span></> : <><span className="long">Mode </span><span className="cap">proyektor</span></>}
@@ -61,15 +93,20 @@ export default function App() {
           <button className="btn-secondary" onClick={() => setAbout(true)} data-testid="about-open">Tentang<span className="long"> dan sumber</span></button>
         </div>
       </header>
-      {err && (
+      {mode !== 'atlas' && (
+        <Suspense fallback={<div className="fatal" role="status"><p>Memuat…</p></div>}>
+          {!gl ? <div className="fatal"><p>Mode ini memerlukan WebGL.</p></div> : mode === 'slicer' ? <SlicerDemo /> : <OrganLab />}
+        </Suspense>
+      )}
+      {mode === 'atlas' && err && (
         <div className="fatal" role="alert">
           <h2>Data katalog gagal dimuat</h2>
           <p>Periksa koneksi internet, lalu coba lagi. ({err})</p>
           <button className="btn-primary" onClick={retry}>Coba lagi</button>
         </div>
       )}
-      {!err && !m && <div className="fatal" role="status" aria-live="polite"><p>Memuat katalog struktur…</p></div>}
-      {m && (gl ? <Lab m={m} dark={dark} /> : <NoWebGL m={m} />)}
+      {mode === 'atlas' && !err && !m && <div className="fatal" role="status" aria-live="polite"><p>Memuat katalog struktur…</p></div>}
+      {mode === 'atlas' && m && (gl ? <Lab m={m} dark={dark} /> : <NoWebGL m={m} />)}
       {about && <About m={m} onClose={() => setAbout(false)} />}
     </div>
   )
@@ -462,6 +499,11 @@ function About({ m, onClose }: { m: Manifest | null; onClose: () => void }) {
         <li>Pembagian otot superfisial dan dalam pada lapisan 2–3 bersifat didaktis.</li>
         <li>Wilayah tubuh ditentukan otomatis dari relasi FMA dan posisi; beberapa struktur di perbatasan wilayah dapat masuk wilayah tetangga.</li>
       </ul>
+      <h3>Organ detail</h3>
+      <p>3D Reference Organs dari <a href="https://humanatlas.io/3d-reference-library" target="_blank" rel="noreferrer">Human Reference Atlas (HRA) v2.5</a>, HuBMAP; model oleh Kristen Browne dan Heidi Schlehlein, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>. Dibuat dari data Visible Human Project (U.S. National Library of Medicine); model otak berdasarkan Allen human brain reference atlas. Dimodifikasi: dikompresi (meshopt), organ reproduksi wanita digabung dalam satu berkas. Rujukan: Börner K, dkk. (2025). <em>Nature Methods</em>, 22(4), 845–860.</p>
+      <p>Organ-organ ini berasal dari orang yang berbeda dengan atlas tubuh BodyParts3D, sehingga ditampilkan terpisah dan tidak digabung menjadi satu tubuh.</p>
+      <h3>Demo 3D Slicer</h3>
+      <p>Data CTChest dan CTACardio dari Sample Data bawaan <a href="https://www.slicer.org" target="_blank" rel="noreferrer">3D Slicer</a>. Asal klinis kedua dataset tidak didokumentasikan; pengembang Slicer menyatakan sample data bebas dipakai. Tangkapan layar, model tulang, dan angka dihasilkan dengan menjalankan Slicer 5.12.4.</p>
       {bySys.length > 0 && (
         <>
           <h3>Struktur yang tersedia ({m?.items.length} mesh, {m?.concepts.length} kelompok yang dapat dicari)</h3>

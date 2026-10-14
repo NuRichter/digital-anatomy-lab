@@ -114,6 +114,54 @@ test('no WebGL fallback', async ({ page }) => {
   await page.screenshot({ path: `${SHOTS}/10-nowebgl.png` })
 })
 
+test('demo 3D Slicer: six steps, MPR, presets, threshold, bone model', async ({ page }) => {
+  const errors = trackErrors(page)
+  await page.goto('/')
+  await page.getByTestId('mode-slicer').click()
+  await expect(page).toHaveURL(/#demo-slicer\/1/)
+  await expect(page.getByTestId('demo-step')).toContainText('Muat CTChest')
+  await expect(page.getByTestId('slice-axial')).toBeVisible({ timeout: 30_000 })
+
+  await page.getByTestId('step-3').click()
+  await page.getByTestId('preset-CT-Lung').click()
+  await expect(page.getByTestId('probe')).toContainText('W 1400 / L -500')
+  await page.getByTestId('slice-axial').scrollIntoViewIfNeeded()
+  const ax = (await page.getByTestId('slice-axial').boundingBox())!
+  await page.mouse.move(ax.x + ax.width * 0.2, ax.y + ax.height * 0.4) // paru kanan
+  await expect.poll(async () => Number(await page.getByTestId('probe-hu').textContent())).toBeLessThan(-600)
+  await expect(page.getByTestId('probe-table')).toContainText('Paru')
+  await page.screenshot({ path: `${SHOTS}/13-slicer-presets.png` })
+
+  await page.getByTestId('step-4').click()
+  await expect(page.getByTestId('thr-stats')).toContainText('cm³')
+  await page.screenshot({ path: `${SHOTS}/14-slicer-threshold.png` })
+
+  await page.getByTestId('next-step').click()
+  await expect(page.getByTestId('bone-model')).toHaveAttribute('data-state', 'ready', { timeout: 30_000 })
+  await page.screenshot({ path: `${SHOTS}/15-slicer-bone.png` })
+
+  await page.getByTestId('next-step').click()
+  await expect(page.getByTestId('stats-table')).toContainText('874,8')
+
+  await page.getByTestId('mode-atlas').click()
+  await waitModel(page)
+  expect(errors, errors.join('\n')).toEqual([])
+})
+
+test('organ detail (HRA): load organ, pick part, switch organ', async ({ page }) => {
+  const errors = trackErrors(page)
+  await page.goto('/#organ')
+  await expect(page.getByTestId('organ-stage')).toHaveAttribute('data-state', 'ready', { timeout: 30_000 })
+  await page.getByTestId('organ-parts').getByRole('button', { name: 'mitral valve' }).click()
+  await expect(page.locator('.pick')).toHaveText('mitral valve')
+  await page.screenshot({ path: `${SHOTS}/16-organ-heart.png` })
+  await page.getByTestId('organ-female-reproductive').click()
+  await expect(page).toHaveURL(/#organ\/female-reproductive/)
+  await expect(page.getByTestId('organ-stage')).toHaveAttribute('data-state', 'ready', { timeout: 30_000 })
+  await expect(page.getByTestId('organ-parts')).toContainText('uterus')
+  expect(errors, errors.join('\n')).toEqual([])
+})
+
 test('mobile layout @mobile', async ({ page }) => {
   const errors = trackErrors(page)
   await page.goto('/')

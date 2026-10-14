@@ -21,6 +21,27 @@
    diekspor per sistem ke glTF binary, lalu dikompresi dengan meshopt (gltf-transform 4.5.1).
 4. Material asli tidak dipakai; warna diberikan di aplikasi mengikuti konvensi atlas.
 
+## Organ detail (`public/hra/*.glb`, `public/hra/hra.json`)
+
+**3D Reference Organs from the Human Reference Atlas (HRA) v2.5, HuBMAP; models by Kristen Browne and Heidi Schlehlein, licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), https://humanatlas.io/3d-reference-library. Created from Visible Human Project data provided by the U.S. National Library of Medicine; brain model based on the Allen human brain reference atlas (Ding et al. 2016). Modified: compressed (meshopt), female organs merged into one file.**
+
+- Rujukan: Börner K, Blood PD, Silverstein JC, et al. Human BioMolecular Atlas Program (HuBMAP): 3D Human Reference Atlas construction and usage. Nature Methods 22(4):845–860 (2025). https://doi.org/10.1038/s41592-024-02563-5
+- Diambil 2026-10-14 dari CDN resmi HRA (`cdn.humanatlas.io/digital-objects/ref-organ/...`); URL per organ dan DOI per komponen tercatat di `hra.json`.
+- Organ-organ ini berasal dari donor/sumber yang berbeda dengan BodyParts3D dan ditampilkan sebagai model terpisah.
+- Perubahan: kompresi meshopt (gltf-transform 4.5.1), lima komponen organ reproduksi wanita (uterus, ovarium kiri/kanan,
+  tuba uterina kiri/kanan) digabung ke satu berkas dengan koordinat asli. Model kelenjar payudara HRA tidak dipakai karena
+  dipahat manual, bukan dari data Visible Human.
+
+## Demo 3D Slicer (`public/demo/**`)
+
+- Data: CTChest dan CTACardio dari Sample Data bawaan 3D Slicer (https://www.slicer.org). Asal klinis kedua dataset tidak
+  didokumentasikan dalam modul Sample Data; pengembang Slicer menyatakan sample data bebas dipakai
+  (https://discourse.slicer.org/t/license-question-about-the-use-of-the-sample-data/30258).
+- Tangkapan layar, angka, model `tulang-ctchest.glb`, dan volume `ctchest-3x.u8.gz` dihasilkan dengan menjalankan
+  3D Slicer 5.12.4 secara otomatis (skrip `slicer_demo.py`) pada 14 Oktober 2026. Volume web diperkecil 3x in-plane dan
+  dikodekan 8-bit (galat rata-rata 1,7 HU); model tulang disederhanakan dari 1.426.348 menjadi 150.000 segitiga.
+- 3D Slicer: lisensi BSD-style (Slicer License). Rujukan: Fedorov A, dkk. (2012). Magnetic Resonance Imaging, 30(9), 1323–1341.
+
 ## Kode
 Kode sumber aplikasi berlisensi MIT (lihat `LICENSE`).
 
