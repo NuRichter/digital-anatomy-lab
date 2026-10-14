@@ -112,8 +112,10 @@ if ($autoDeploy) {
   $nudged = $false
   while ((Get-Date) -lt $deadline -and -not $deployUrl) {
     Start-Sleep 10
-    $dep = gh api "repos/$Owner/$Repo/deployments?sha=$sha" --jq '[.[] | select(.environment | test("Production";"i"))][0].id' 2>$null
-    if (-not $dep -or $dep -eq 'null') {
+    # Filter di PowerShell, bukan jq: PS 5.1 membuang tanda kutip ganda di argumen native.
+    $dep = (gh api "repos/$Owner/$Repo/deployments?sha=$sha" | Out-String | ConvertFrom-Json) |
+      Where-Object { $_.environment -match '^Production' } | Select-Object -First 1 -ExpandProperty id
+    if (-not $dep) {
       if (-not $nudged -and (Get-Date) -gt $deadline.AddSeconds(-$TimeoutSec + 90)) {
         Write-Host 'Belum ada deployment untuk commit ini; memicu dengan commit kosong.'
         git commit --allow-empty -m 'chore: trigger Vercel deployment' | Out-Null
@@ -122,7 +124,8 @@ if ($autoDeploy) {
       }
       continue
     }
-    $st = gh api "repos/$Owner/$Repo/deployments/$dep/statuses" --jq '.[0] | "\(.state) \(.environment_url)"'
+    $s0 = (gh api "repos/$Owner/$Repo/deployments/$dep/statuses" | Out-String | ConvertFrom-Json) | Select-Object -First 1
+    $st = "$($s0.state) $($s0.environment_url)"
     Write-Host "  status: $st"
     if ($st -match '^success (\S+)') { $deployUrl = $Matches[1] }
     elseif ($st -match '^(failure|error)') { Fail "build Vercel gagal. Lihat log: npx vercel@latest inspect --logs <url>" }
