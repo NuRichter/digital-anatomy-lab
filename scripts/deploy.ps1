@@ -148,7 +148,7 @@ Write-Host "produksi   : $prod"
 
 $code = curl.exe -s -o NUL -w '%{http_code}' $prod
 if ($code -ne '200') { Fail "$prod mengembalikan HTTP $code" }
-$glb = curl.exe -sI "$prod/models/skeletal.glb"
+$glb = curl.exe -sI "$prod/models/skeletal.glb" | Out-String
 if ($glb -notmatch 'HTTP/\S+ 200' -or $glb -notmatch 'model/gltf-binary') { Write-Host $glb; Fail 'model GLB tidak tersaji benar' }
 Write-Host 'HTTP 200, GLB tersaji dengan Content-Type model/gltf-binary'
 
