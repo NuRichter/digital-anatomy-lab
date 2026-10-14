@@ -28,6 +28,13 @@ npm run preview    # server lokal untuk dist/
 npx playwright install chromium && npm test
 ```
 
+## Deploy
+Setelah `gh auth login` dan `vercel login` (dilakukan sendiri, tanpa token di berkas):
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\deploy.ps1   # tambah -SkipTests untuk melewati Playwright
+```
+Skrip menjalankan build dan uji, membuat repo GitHub bila belum ada (tidak menimpa repo yang sudah ada), menautkan proyek Vercel, menghubungkan Git untuk auto-deploy, push ke `main`, menunggu deployment produksi, lalu memeriksa URL produksi. Setelah auto-deploy aktif, cukup `git push` ke `main`.
+
 ## Pipeline aset
 Berkas OBJ mentah **tidak** disimpan di repositori. Untuk membangun ulang:
 1. Unduh `isa_BP3D_4.0_obj_99.zip` dan tabel `isa_*`/`partof_*` dari DBCLS (lihat ATTRIBUTION.md).
