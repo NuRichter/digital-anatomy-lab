@@ -61,7 +61,8 @@ if ($dirty) {
   Write-Host $dirty
   Fail 'ada perubahan belum di-commit. Commit dulu (git add -A; git commit -m "...") lalu ulangi.'
 }
-$bad = git ls-files | Select-String -Pattern '\.(pptx|docx|pdf|blend)$|(^|/)\.env|node_modules/|^dist/|^\.vercel/'
+# Deck di docs/deliverables/ sengaja dipublikasikan; berkas Office lain tetap ditolak.
+$bad = git ls-files | Where-Object { $_ -notmatch '^docs/deliverables/[^/]+\.pptx$' } | Select-String -Pattern '\.(pptx|docx|pdf|blend)$|(^|/)\.env|node_modules/|^dist/|^\.vercel/'
 if ($bad) { Write-Host $bad; Fail 'berkas terlarang ada di repo' }
 $big = git ls-files | ForEach-Object { Get-Item -LiteralPath $_ } | Where-Object Length -gt 50MB
 if ($big) { Write-Host ($big | Out-String); Fail 'berkas > 50 MB' }

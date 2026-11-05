@@ -7,5 +7,6 @@ playwright-report/
 .env*
 *.docx
 *.pptx
+!docs/deliverables/*.pptx
 *.pdf
 raw/
